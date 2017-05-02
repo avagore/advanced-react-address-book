@@ -1,19 +1,19 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import UserDetail from './components/UserDetail';
+import ListOfUsers from './components/ListOfUsers';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
+function App (props){
+    return (
+      <div>
+        <ListOfUsers 
+        filterUsers={props.filterUsers}
+        chooseUser={props.chooseUser} 
+        users={props.users} />
+        <UserDetail user={props.user} />
       </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
-  );
+    );
 }
 
 export default App;
